@@ -1,0 +1,52 @@
+
+body {
+
+    margin: 0px;
+}
+h1, h3, h4 {
+    margin: 0 auto;
+    text-align:center;
+    background: rgba(200,50,90, 0.30);
+}
+.datetime {
+    margin: 0 auto;
+    text-align:center;
+}
+.contact {
+    margin: 0 auto;
+    text-align:center;
+    
+}
+.choose-day {
+    margin: 0 auto;
+    text-align:center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+} 
+.container-menu {
+    display: flex;   
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    
+    
+}
+.menu {
+    border: solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+.menu-content {
+    padding: 10px;
+    
+}
+.food {
+    padding-top: 10px;
+    margin-bottom:10px;
+}
+.food:hover {
+    border-bottom: solid gray;
+}

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restaurant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:xmisd01:restaurant restaurace-schema.xsd" xmlns="urn:xmisd01:restaurant">
+    <restaurant_name>Bumbo</restaurant_name>
+    <adress>Dlouhá 12</adress>
+    <city>Praha</city>
+    <zip>110 00</zip>
+    <tel_number>987 277 835</tel_number>
+    <opening_time>12:00:00</opening_time>
+    <closing_time>17:00:00</closing_time>
+    
+    <menu day="2021-12-24">
+        <chef id="1">
+            <name>Ronaldo</name>
+            <surname>Discrete</surname>
+        </chef>
+        <course type="appetizer">
+            <food>
+                <name>Brokolicový krém</name>
+                <price currency="CZK">40</price>
+                <description>Polévka z brokolice se špetkou soli</description>
+                <alergens>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                    <alergen number="10">
+                        <contains>Hořčice</contains>
+                    </alergen>
+                </alergens>
+                <calories>230</calories>
+            </food>
+            <food>
+                <name>Bramboračka</name>
+                <price currency="CZK">39</price>
+                <description>Polévka s bramborou a cibulí</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="10">
+                        <contains>Hořčice</contains>
+                    </alergen>
+                </alergens>
+                <calories>200</calories>
+            </food>
+        </course>
+        <course type="main">
+            <food>
+                <name>Kuřecí steak s fazolovými lusky</name>
+                <price currency="CZK">129</price>
+                <description>Kuřecí steak s fazolovými lusky na slanině s grenaillemi</description>
+                <alergens>
+                    <alergen number="10">
+                        <contains>Hořčice</contains>
+                    </alergen>
+                </alergens>
+                <calories>420</calories>
+            </food>
+            <food>
+                <name>Vepřové kostky s rýží</name>
+                <price currency="CZK">119</price>
+                <description>Vepřové kostky na znojemský způsob s dušenou rýží</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>480</calories>
+            </food>
+            <food>
+                <name>Smažený karbanátek s bramborovou kaší</name>
+                <price currency="CZK">110</price>
+                <description>Smažený karbanátek s bramborovou kaší a kyselou okurkou</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="3">
+                        <contains>Korýši</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>470</calories>
+            </food>
+        </course>
+        <course type="dessert">
+            <food>
+                <name>Belgické Waffle</name>
+                <price currency="CZK">89</price>
+                <description>Belgické vafle se spoustou pravého javorového sirupu</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>240</calories>
+            </food>
+            <food>
+                <name>Štrůdl</name>
+                <price currency="CZK">49</price>
+                <description>Babiččin štrůdl se skořicí a čerstvými jablky</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="6">
+                        <contains>Sója</contains>
+                    </alergen>
+                </alergens>
+                <calories>290</calories>
+            </food>
+            <food>
+                <name>Palačinky</name>
+                <price currency="CZK">99</price>
+                <description>Palačinky s vanilkovou zmrzlinou a kousky ovoce</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>350</calories>
+            </food>
+        </course>
+    </menu>
+    <menu day="2021-12-25">
+        <chef id="2">
+            <name>Marko</name>
+            <surname>Polo</surname>
+        </chef>
+        <course type="appetizer">
+            <food>
+                <name>Květáková polévka</name>
+                <price currency="CZK">40</price>
+                <description>Polévka z květáku a cibule</description>
+                <alergens>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                    <alergen number="10">
+                        <contains>Hořčice</contains>
+                    </alergen>
+                </alergens>
+                <calories>220</calories>
+            </food>
+            <food>
+                <name>Žampiónová polévka</name>
+                <price currency="CZK">59</price>
+                <description>Polévka se žampióny a zeleninou</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                    <alergen number="9">
+                        <contains>Celer</contains>
+                    </alergen>
+                </alergens>
+                <calories>200</calories>
+            </food>
+        </course>
+        <course type="main">
+            <food>
+                <name>Kuřecí steak na grilované zelenině</name>
+                <price currency="CZK">139</price>
+                <description>Kuřecí steak na grilované zelenině se sázeným vejcem a
+                    grenaillemi</description>
+                <alergens>
+                    <alergen number="10">
+                        <contains>Hořčice</contains>
+                    </alergen>
+                </alergens>
+                <calories>420</calories>
+            </food>
+            <food>
+                <name>Špagety aglio olio</name>
+                <price currency="CZK">119</price>
+                <description>Špagety aglio olio s parmskou šunkou a parmazánem</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="3">
+                        <contains>Korýši</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>450</calories>
+            </food>
+            <food>
+                <name>Vepřové medailonky</name>
+                <price currency="CZK">139</price>
+                <description>Vepřové medailonky s česnekem a bramborovými rosty</description>
+                <alergens>
+                    <alergen number="10">
+                        <contains>Hořčice</contains>
+                    </alergen>
+                </alergens>
+                <calories>490</calories>
+            </food>
+        </course>
+        <course type="dessert">
+            <food>
+                <name>Belgické Waffle</name>
+                <price currency="CZK">89</price>
+                <description>Belgické vafle se spoustou pravého javorového sirupu</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>240</calories>
+            </food>
+            <food>
+                <name>Štrůdl</name>
+                <price currency="CZK">49</price>
+                <description>Babiččin štrůdl se skořicí a čerstvými jablky</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="6">
+                        <contains>Sója</contains>
+                    </alergen>
+                </alergens>
+                <calories>290</calories>
+            </food>
+            <food>
+                <name>Palačinky</name>
+                <price currency="CZK">100</price>
+                <description>Palačinky s vanilkovou zmrzlinou a kousky ovoce</description>
+                <alergens>
+                    <alergen number="1">
+                        <contains>Lepek</contains>
+                    </alergen>
+                    <alergen number="7">
+                        <contains>Mléko</contains>
+                    </alergen>
+                </alergens>
+                <calories>350</calories>
+            </food>
+        </course>
+    </menu>
+    <list_of_alergens>
+        <alergens>
+            <alergen number="1">
+                <contains>Lepek</contains>
+            </alergen>
+            <alergen number="2">
+                <contains>Korýši</contains>
+            </alergen>
+            <alergen number="3">
+                <contains>Vejce</contains>
+            </alergen>
+            <alergen number="4">
+                <contains>Ryby</contains>
+            </alergen>
+            <alergen number="5">
+                <contains>Arašídy</contains>
+            </alergen>
+            <alergen number="6">
+                <contains>Sója</contains>
+            </alergen>
+            <alergen number="7">
+                <contains>Mléko</contains>
+            </alergen>
+            <alergen number="8">
+                <contains>Ořechy</contains>
+            </alergen>
+            <alergen number="9">
+                <contains>Celer</contains>
+            </alergen>
+            <alergen number="10">
+                <contains>Hořčice</contains>
+            </alergen>
+        </alergens>
+    </list_of_alergens>
+</restaurant>

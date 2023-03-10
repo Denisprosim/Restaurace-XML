@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:xmisd01:restaurant" 
+    xmlns="urn:xmisd01:restaurant"
+    xmlns:r="urn:xmisd01:restaurant"
+    elementFormDefault="qualified">
+    
+    <xs:element name="restaurant" type="restaurantType">
+        
+        <xs:key name="chefTypeKey">
+            <xs:selector xpath="r:menu/r:chef"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        
+        <xs:key name="menuTypeKey">
+            <xs:selector xpath="r:menu"/>
+            <xs:field xpath="@day"/>
+        </xs:key>
+        
+        <xs:key name="alergensTypeKey">
+            <xs:selector xpath="r:list_of_alergens/r:alergens/r:alergen"/>
+            <xs:field xpath="@number"/>
+        </xs:key>
+        
+        <xs:keyref refer="alergensTypeKey" name="alergenTypeKey">
+            <xs:selector xpath="r:menu/r:food/r:alergens/r:alergen"></xs:selector>
+            <xs:field xpath="@number"></xs:field>
+        </xs:keyref>
+        
+    </xs:element>
+    
+    <xs:complexType name="restaurantType">
+        <xs:sequence>
+            <xs:element name="restaurant_name" type="xs:string"/>
+            <xs:element name="adress" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="zip" type="zipType"/>
+            <xs:element name="tel_number" type="tel_numberType"/>
+            <xs:element name="opening_time" type="xs:time"/>
+            <xs:element name="closing_time" type="xs:time"/>
+            <xs:element name="menu" type="menuType" maxOccurs="unbounded"/>
+            <xs:element name="list_of_alergens" type="list_of_alergensType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="zipType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}\s\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tel_numberType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}\s\d{3}\s\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="menuType">
+        <xs:sequence>
+            <xs:element name="chef" type="chefType"/>
+            <xs:element name="course" type="courseType" maxOccurs="3"/>
+        </xs:sequence>
+        <xs:attribute name="day" type="dayType"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="dayType">
+        <xs:restriction base="xs:date">
+            <xs:minInclusive value="2021-12-01"></xs:minInclusive>
+            <xs:maxExclusive value="2022-12-31"></xs:maxExclusive>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="chefType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="surname" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int"/>
+    </xs:complexType>
+    
+    <xs:complexType name="courseType">
+        <xs:sequence>
+            <xs:element name="food" type="foodType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="type" type="courseAttType"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="courseAttType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="appetizer"/>
+            <xs:enumeration value="main"/>
+            <xs:enumeration value="dessert"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="foodType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="price">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:float">
+                            <xs:attribute name="currency" type="currencyType" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="alergens" type="alergensType"/>
+            <xs:element name="calories" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="currencyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CZK"/>
+            <xs:enumeration value="USD"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="alergensType">
+        <xs:sequence>
+            <xs:element name="alergen" type="alergenType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="alergenType">
+        <xs:sequence>
+            <xs:element name="contains" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="number" type="xs:int"/>
+    </xs:complexType>
+    
+    <xs:complexType name="list_of_alergensType">
+        <xs:sequence>
+            <xs:element name="alergens" type="alergensType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

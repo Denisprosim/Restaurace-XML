@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:r="urn:xmisd01:restaurant">
+   <fo:layout-master-set>
+      <fo:simple-page-master margin-bottom="2cm" margin-left="3cm" margin-right="2cm" margin-top="2.5cm" master-name="my-master">
+         <fo:region-body/>
+      </fo:simple-page-master>
+   </fo:layout-master-set>
+   <fo:page-sequence master-reference="my-master">
+      <fo:flow flow-name="xsl-region-body" font-family="Arial" font-size="12pt">
+         <fo:block>
+            <fo:external-graphic src="food_patter_icon_150227.png" content-width="3cm" width="100%" display-align="before" text-align="center"/>
+         </fo:block>
+         <fo:block>
+            <fo:block font-size="250%" text-align="center">Bumbo</fo:block>
+            <fo:block margin-bottom="2cm" text-align="center">Dlouhá 12, Praha 110 00, 987 277 835</fo:block>
+            <fo:table>
+               <fo:table-header>
+                  <fo:table-row border-bottom="2px solid black" font-weight="bold">
+                     <fo:table-cell width="3cm">
+                        <fo:block>2021-12-24</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell width="9cm">
+                        <fo:block>
+                            Jídlo:
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                            Cena:
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-header>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell>
+                        <fo:block>appetizer</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e37">Brokolicový krém</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e67">Bramboračka</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>40CZK</fo:block>
+                        <fo:block>39CZK</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row>
+                     <fo:table-cell>
+                        <fo:block>main</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e100">Kuřecí steak s fazolovými lusky</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e124">Vepřové kostky s rýží</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e154">Smažený karbanátek s bramborovou kaší</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>129CZK</fo:block>
+                        <fo:block>119CZK</fo:block>
+                        <fo:block>110CZK</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row>
+                     <fo:table-cell>
+                        <fo:block>dessert</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e193">Belgické Waffle</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e223">Štrůdl</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e253">Palačinky</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>89CZK</fo:block>
+                        <fo:block>49CZK</fo:block>
+                        <fo:block>99CZK</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+            <fo:block>
+            Ronaldo
+            Discrete
+        </fo:block>
+            <fo:table>
+               <fo:table-header>
+                  <fo:table-row border-bottom="2px solid black" font-weight="bold">
+                     <fo:table-cell width="3cm">
+                        <fo:block>2021-12-25</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell width="9cm">
+                        <fo:block>
+                            Jídlo:
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                            Cena:
+                        </fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-header>
+               <fo:table-body>
+                  <fo:table-row>
+                     <fo:table-cell>
+                        <fo:block>appetizer</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e298">Květáková polévka</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e328">Žampiónová polévka</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>40CZK</fo:block>
+                        <fo:block>59CZK</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row>
+                     <fo:table-cell>
+                        <fo:block>main</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e367">Kuřecí steak na grilované zelenině</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e391">Špagety aglio olio</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e427">Vepřové medailonky</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>139CZK</fo:block>
+                        <fo:block>119CZK</fo:block>
+                        <fo:block>139CZK</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+                  <fo:table-row>
+                     <fo:table-cell>
+                        <fo:block>dessert</fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e454">Belgické Waffle</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e484">Štrůdl</fo:basic-link>
+                        </fo:block>
+                        <fo:block>
+                           <fo:basic-link internal-destination="d0e514">Palačinky</fo:basic-link>
+                        </fo:block>
+                     </fo:table-cell>
+                     <fo:table-cell>
+                        <fo:block>89CZK</fo:block>
+                        <fo:block>49CZK</fo:block>
+                        <fo:block>100CZK</fo:block>
+                     </fo:table-cell>
+                  </fo:table-row>
+               </fo:table-body>
+            </fo:table>
+            <fo:block>
+            Marko
+            Polo
+        </fo:block>
+        
+        
+            <fo:block id="d0e37" page-break-before="always">Brokolicový krém</fo:block>
+            <fo:block>Polévka z brokolice se špetkou soli</fo:block>
+            <fo:block>
+            Kalorie: 230</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Mléko
+                    
+                    
+                        Hořčice
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 40CZK</fo:block>
+            
+            <fo:block id="d0e67" page-break-before="always">Bramboračka</fo:block>
+            <fo:block>Polévka s bramborou a cibulí</fo:block>
+            <fo:block>
+            Kalorie: 200</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Hořčice
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 39CZK</fo:block>
+        
+        
+            
+            <fo:block id="d0e100" page-break-before="always">Kuřecí steak s fazolovými lusky</fo:block>
+            <fo:block>Kuřecí steak s fazolovými lusky na slanině s grenaillemi</fo:block>
+            <fo:block>
+            Kalorie: 420</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Hořčice
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 129CZK</fo:block>
+            
+            <fo:block id="d0e124" page-break-before="always">Vepřové kostky s rýží</fo:block>
+            <fo:block>Vepřové kostky na znojemský způsob s dušenou rýží</fo:block>
+            <fo:block>
+            Kalorie: 480</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 119CZK</fo:block>
+            
+            <fo:block id="d0e154" page-break-before="always">Smažený karbanátek s bramborovou kaší</fo:block>
+            <fo:block>Smažený karbanátek s bramborovou kaší a kyselou okurkou</fo:block>
+            <fo:block>
+            Kalorie: 470</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Korýši
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 110CZK</fo:block>
+        
+        
+            
+            <fo:block id="d0e193" page-break-before="always">Belgické Waffle</fo:block>
+            <fo:block>Belgické vafle se spoustou pravého javorového sirupu</fo:block>
+            <fo:block>
+            Kalorie: 240</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 89CZK</fo:block>
+            
+            <fo:block id="d0e223" page-break-before="always">Štrůdl</fo:block>
+            <fo:block>Babiččin štrůdl se skořicí a čerstvými jablky</fo:block>
+            <fo:block>
+            Kalorie: 290</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Sója
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 49CZK</fo:block>
+            
+            <fo:block id="d0e253" page-break-before="always">Palačinky</fo:block>
+            <fo:block>Palačinky s vanilkovou zmrzlinou a kousky ovoce</fo:block>
+            <fo:block>
+            Kalorie: 350</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 99CZK</fo:block>
+        
+    
+        
+            Marko
+            Polo
+        
+        
+            <fo:block id="d0e298" page-break-before="always">Květáková polévka</fo:block>
+            <fo:block>Polévka z květáku a cibule</fo:block>
+            <fo:block>
+            Kalorie: 220</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Mléko
+                    
+                    
+                        Hořčice
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 40CZK</fo:block>
+            
+            <fo:block id="d0e328" page-break-before="always">Žampiónová polévka</fo:block>
+            <fo:block>Polévka se žampióny a zeleninou</fo:block>
+            <fo:block>
+            Kalorie: 200</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Mléko
+                    
+                    
+                        Celer
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 59CZK</fo:block>
+        
+        
+            
+            <fo:block id="d0e367" page-break-before="always">Kuřecí steak na grilované zelenině</fo:block>
+            <fo:block>Kuřecí steak na grilované zelenině se sázeným vejcem a
+                    grenaillemi</fo:block>
+            <fo:block>
+            Kalorie: 420</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Hořčice
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 139CZK</fo:block>
+            
+            <fo:block id="d0e391" page-break-before="always">Špagety aglio olio</fo:block>
+            <fo:block>Špagety aglio olio s parmskou šunkou a parmazánem</fo:block>
+            <fo:block>
+            Kalorie: 450</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Korýši
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 119CZK</fo:block>
+            
+            <fo:block id="d0e427" page-break-before="always">Vepřové medailonky</fo:block>
+            <fo:block>Vepřové medailonky s česnekem a bramborovými rosty</fo:block>
+            <fo:block>
+            Kalorie: 490</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Hořčice
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 139CZK</fo:block>
+        
+        
+            
+            <fo:block id="d0e454" page-break-before="always">Belgické Waffle</fo:block>
+            <fo:block>Belgické vafle se spoustou pravého javorového sirupu</fo:block>
+            <fo:block>
+            Kalorie: 240</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 89CZK</fo:block>
+            
+            <fo:block id="d0e484" page-break-before="always">Štrůdl</fo:block>
+            <fo:block>Babiččin štrůdl se skořicí a čerstvými jablky</fo:block>
+            <fo:block>
+            Kalorie: 290</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Sója
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 49CZK</fo:block>
+            
+            <fo:block id="d0e514" page-break-before="always">Palačinky</fo:block>
+            <fo:block>Palačinky s vanilkovou zmrzlinou a kousky ovoce</fo:block>
+            <fo:block>
+            Kalorie: 350</fo:block>
+            <fo:block>
+            Obsahuje: 
+                    
+                        Lepek
+                    
+                    
+                        Mléko
+                    
+                </fo:block>
+            <fo:block>
+            Cena: 100CZK</fo:block>
+        
+    
+         </fo:block>
+      </fo:flow>
+   </fo:page-sequence>
+</fo:root>

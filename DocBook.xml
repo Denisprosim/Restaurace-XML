@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0">
+    <info>
+        <title>Restaurace - dokumentace</title>
+        <author>
+            <personname>
+                <firstname>Denis</firstname>
+                <surname>Mišura</surname>
+            </personname>
+            <email>misd01@vse.cz</email>
+        </author>
+        <copyright>
+            <year>2022</year>
+            <holder>Denis Mišura</holder>
+        </copyright>
+    </info>
+    <preface>
+        <title>Úvod</title>
+        <indexterm>
+            <primary>Úvod</primary>
+        </indexterm>
+        <para>Dokumentace k semestrální práci pro předmět 4iz238 - XML Teorie a praxe značkovacích jazyků.</para>
+    </preface>
+    <chapter>
+        <title>XML schéma</title>
+        <indexterm>
+            <primary>definice XML schéma</primary>
+            <see>XSD</see>
+        </indexterm>
+        <sect1>
+            <title>Význam a využití schématu</title>
+            <para>
+                XML schéma slouží pro kontrolu XML dokumentu. Toto schéma obsahuje definice elementů, jejich omezení (tvar řetězce, počet výskytů) a referenční integritu (unikátnost a relace). Primární důvody k vytváření XML schématu jsou:
+            </para>
+            <itemizedlist>
+                <listitem><para>Validace vstupních hodnot</para></listitem>
+                <listitem><para>Validace celkového formátu</para></listitem>
+                <listitem><para>Pomocí schématu je možné vygenerovat dokumentaci</para></listitem>
+            </itemizedlist>
+        </sect1>
+        <sect1>
+            <title>Popis implementace</title>
+            <para>
+                Schéma pro dokument <filename>restaurant.xml</filename> je obsaženo v souboru restaurace-schema<filename>restaurace.xsd.</filename> 
+                Pro jeho vytvoření byl použit jazyk <emphasis>W3C XML Schema</emphasis>. 
+                Dokument byl vytvořen metodou slepého benátčana. To znamená, že pro všechny element jsou definovány typy a tyto elementy jsou poté definování lokálně pomocí těchto typů. Výhodou je, že všechny elementy lze znovu používat a je přehledný.
+            </para>
+            <para>
+                V implementaci potom využívám například konkrétní výčet hodnot, které mohou být obsaženy v elementu <code>course </code>. Element course znamená jídelní chod, kterým může být předkrm, hlavní chod a dezert. Dále byl vužit výčet u měny, která tvořila atribut elementu <code>price </code>. Konkrétně byly přednastaveny české koruny CZK a americké dolary USD.
+                Ukázka ze schématu:
+            </para>
+            <blockquote><literallayout><code><![CDATA[<xs:simpleType name="courseAttType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="appetizer"/>
+            <xs:enumeration value="main"/>
+            <xs:enumeration value="dessert"/>
+        </xs:restriction>
+    </xs:simpleType>
+            ]]></code></literallayout></blockquote>
+            <blockquote><literallayout><code><![CDATA[
+        <xs:simpleType name="currencyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CZK"/>
+            <xs:enumeration value="USD"/>
+        </xs:restriction>
+    </xs:simpleType>
+            ]]></code></literallayout></blockquote>
+            <para>
+                Dále jednou z možností omezení vstupních hodnot byl konkretní tvar řetězce nastaven pomoci regulárního výrazu. To bylo využito například u telefonního čísla <code>tel_number</code>, kdy číslo muselo být ve tvaru 9 čísel a mezera za každým třetím číslem  
+                Následuje ukázka z kódu schématu:
+            </para>
+            <blockquote><literallayout><code><![CDATA[    <xs:simpleType name="tel_numberType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}\s\d{3}\s\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+            ]]></code></literallayout></blockquote>
+            <para>
+                V některých případech bylo zapotřebí unikátnosti atributu a to konkrétně u atributu <code>menu</code>. Atribut u elementu menu tvořil datum, kdy bylo dané jídelní menu k dispozici. 
+                Následuje ukázka z kódu:
+            </para>
+            <blockquote><literallayout><code><![CDATA[        <xs:key name="menuTypeKey">
+            <xs:selector xpath="r:menu"/>
+            <xs:field xpath="@day"/>
+        </xs:key>
+            ]]></code></literallayout></blockquote>          
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>XSL transformace</title>
+        <indexterm>
+            <primary>definice XSL</primary>
+            <see>XSL</see>
+        </indexterm>
+        <sect1>
+            <title>Význam a použití</title>
+            <para>
+                XSL transformace obecně slouží k vygenerování html souboru z xml souborou. To vše za využítí XSL stylů, které umožňují popsat vzhled XML dokumentu odděleně od jeho obsahu a významu. 
+                Při správné implementaci je nespornou výhodou univerzálnost XSL transformace, kdy mohu stejným stylem nastylovat několik xml souborů stejné třídy 
+            </para>
+        </sect1>
+        <sect1>
+            <title>XSL transformace do HTML</title>
+            <para>
+                Celý styl se skládá z šablon, z nichž každá je pomocí výrazu XPath určena pro určitou množinu elementů. Šablony definují, 
+                jak se zpracují vybrané elementy. Styl pro transformaci souboru <filename>restaurant.xml</filename> do podoby html 
+                je uložen v souboru <filename>restaurace-transformace.xsl</filename>.   
+            </para>
+            <para>
+                Pro přehlednější zobrazení byl využit separátní soubor <filename>restaurace-style.css</filename>,
+                který pomocí kaskádových stylu doupravil soubor tak, aby byl přehednější a více připomínal webovou stránku.
+            </para>
+            <para>
+                Prvním krokem při transformaci do .html souboru je definice výstupního formátu v xsl. V našem případě byl zvolen formát HTML5.
+            </para>
+            <blockquote><literallayout><code><![CDATA[
+<xsl:output method="html" version="5" name="html5"/>
+            ]]></code></literallayout></blockquote>
+            <para>
+                Dálé byla definovaná základní struktůra stránky na základě standardu HTML5.
+            </para>
+            <blockquote><literallayout><code><![CDATA[ <xsl:template match="/">
+        <head>
+            <link href="restaurace-style.css" rel="stylesheet" type="text/css"/>
+            <title>
+                <xsl:value-of select="r:restaurant/r:restaurant_name"/>
+            </title>
+        </head>
+        <body>
+            <main>
+                <xsl:apply-templates/>
+            </main>
+        </body>
+    </xsl:template>
+            ]]></code></literallayout></blockquote>
+            <para>
+                Poté se pro jednotlivé elementy definovaly schémata, ve kterých potom byly vloženy do příslušných elementů HTML.
+            </para>
+            <blockquote><literallayout><code><![CDATA[<xsl:template match="r:menu">
+        <div class="menu">
+            <h3>Nabídka na den: <xsl:value-of select="@day"/></h3>
+            <div class="menu-content">
+                <strong>Kuchař dne:</strong>
+                <xsl:value-of select="r:chef"/>
+                <xsl:apply-templates select="r:course"/>
+            </div>
+        </div>
+    </xsl:template>
+            ]]></code></literallayout></blockquote>          
+        </sect1>
+
+        <sect1>
+            <title>XSL FO transformace</title>
+            <indexterm>
+                <primary>definice XSL FO</primary>
+                <see>XSL FO</see>
+            </indexterm>
+            <para>
+                XSL FO transformace slouží k tranformování XML souboru do formátovacích objektů a následně například do PDF..
+            </para>
+            <para>
+                V našem případě se jednalo o transformaci souboru <filename>restaurant.xml</filename> do <filename>restaurace.fo</filename> a finálně do <filename>restaurace.pdf</filename>. 
+                Soubor formátovacích objektů byly využity jen jako kontrola před finální transformací do PDF. Veškeré úpravy byly v rámci souboru <filename>restaurace-pdf.xsl</filename>.
+            </para>
+            <para>
+                Jelikož bylo zadání jednoduché jídelní menu, tak nebyl prostor pro využití potenciálu XSL FO stylu. Jedinou zajímavější pasáží pri implementaci je řešení odkazování. 
+                V rámci první stránky se nachází základní informace a jídelní menu s názvem jídla a jeho cenou. 
+                Název jídla je pomocí <code>generate.id</code> nastaven jako odkaz, kdy po kliknutí na něj je uživatel přesměrován na blížší informace týkajících se daného jídla.
+            </para>
+            <blockquote><literallayout><code><![CDATA[  <xsl:template match="r:food" mode="obsah">
+            <fo:block>
+                <fo:basic-link internal-destination="{generate-id()}">
+                    <xsl:value-of select="r:name"/>
+                </fo:basic-link>
+                
+            </fo:block>
+    </xsl:template>]]></code></literallayout></blockquote>                     
+        </sect1>
+        
+    </chapter>
+    <index><title>Rejstřík</title></index>
+</book>
